@@ -1,7 +1,7 @@
 # EC601OpenCV
-gyt@bu.edu
-This is the exercise for OpenCV. 
-###EX1
+gyt@bu.edu<br>
+This is the exercise for OpenCV. <br>
+### EX1
 Q:How does a program read the cvMat object, in particular, what is the order of the pixel structure?<br>
 Image is built by pixels. OpenCV read images through every pixel.<br>
 For example:
@@ -65,7 +65,7 @@ RGB:<br>
  [ 53  53  59 ..., 115 112 114]
  [ 53  53  64 ..., 117 118 122]
  [ 53  53  64 ..., 117 118 122]]
-###EX4
+### EX4
 Q:What are the disadvantages of binary threshold?<br>
 Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black). It can't fit all pictures because it directly split picture into two sets and it will lost a lot of information. It may not be good in all the conditions where image has different lighting conditions in different areas.<br>
 Q:When is Adaptive Threshold useful?<br>
