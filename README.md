@@ -65,3 +65,8 @@ RGB:
  [ 53  53  59 ..., 115 112 114]
  [ 53  53  64 ..., 117 118 122]
  [ 53  53  64 ..., 117 118 122]]
+###EX4
+Q:What are the disadvantages of binary threshold?
+Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black). It can't fit all pictures because it directly split picture into two sets and it will lost a lot of information. It may not be good in all the conditions where image has different lighting conditions in different areas.
+Q:When is Adaptive Threshold useful?
+Binary threshold used a global value as threshold value so it may not be good in all the conditions where image has different lighting conditions in different areas.In that case, we go for adaptive thresholding. In this, the algorithm calculate the threshold for a small regions of the image. So we get different thresholds for different regions of the same image and it gives us better results for images with varying illumination.
