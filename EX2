@@ -1,0 +1,58 @@
+import numpy as np
+import cv2
+
+img = cv2.imread("Lenna.png")
+cv2.namedWindow('Original', cv2.WINDOW_AUTOSIZE)
+cv2.imshow("Original",img)
+# RBG
+(B, G, R) = cv2.split(img)
+cv2.namedWindow('Red', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Green', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Blue', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Red', R)
+cv2.imshow('Green', G)
+cv2.imshow('Blue', B)
+# YCRCB
+(Y, Cb, Cr) = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb))
+cv2.namedWindow('Y', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Cb', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Cr', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Y',Y)
+cv2.imshow('Cb',Cb)
+cv2.imshow('Cr',Cr)
+# HSV
+(H, S, V) = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2HSV))
+cv2.namedWindow('Hue', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Saturation', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Value', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Hue',H)
+cv2.imshow('Saturation',S)
+cv2.imshow('Value',V)
+# Print Value at (20, 25)
+
+print(R[20][25])
+print(G[20][25])
+print(B[20][25])
+
+print(Y[20][25])
+print(Cb[20][25])
+print(Cr[20][25])
+
+print(H[20][25])
+print(S[20][25])
+print(V[20][25])
+#restart
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+#The answer for Print Value at (20, 25)
+#225
+#122
+#106
+#151
+#181
+#103
+#4
+#135
+#225
