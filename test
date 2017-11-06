@@ -1,0 +1,63 @@
+import cv2
+print(cv2.__version__)
+#print the version 3.3.0
+
+import numpy as np
+import cv2
+
+img1 = cv2.imread('image.jpg', 1) 
+img2 = cv2.imread('image.jpg', 0)
+img3 = cv2.imread('image.jpg', -1)
+
+print(img1)
+print(img2)
+
+cv2.imwrite('save_image1.png', img1)
+cv2.imwrite('save_image2.png', img2)
+cv2.imwrite('save_image3.png', img3)
+
+cv2.namedWindow('RGB', cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)
+cv2.imshow('RGB', img1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#print the matrix of img1 img2 and img3, and the picture of them, press 0 to restart
+
+import numpy as np
+import cv2
+
+img1 = cv2.imread('image.jpg', 1) #rgb
+img2 = cv2.imread('image.jpg', 0) #gray
+img3 = cv2.imread('image.jpg', -1) #rgb with alpha channel
+
+#property
+print(img1.shape)
+print(img1.size)
+print(img1.dtype) 
+
+print(img2.shape)
+print(img2.size)
+print(img2.dtype) 
+
+print(img3.shape)
+print(img3.size)
+print(img3.dtype) 
+
+#crop image
+cropped_img = img1[173:301, 87:208]
+cv2.namedWindow('OriginalImage', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('CroppedImage', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('OriginalImage', img1)
+cv2.imshow('CroppedImage', cropped_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#outputs
+#(512, 512, 3)
+#786432
+#uint8
+#(512, 512)
+#262144
+#uint8
+#(512, 512, 3)
+#786432
+#uint8
+
