@@ -1,0 +1,34 @@
+import sys
+import cv2
+import numpy as np
+
+img1 = cv2.imread('Lenna.png')
+cv2.namedWindow('Original', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Original',img1)
+
+img0 = cv2.imread('Lenna.png', 0)
+cv2.namedWindow('Gray', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Gray', img0)
+
+ret,thresh=cv2.threshold(img0,128,255,2) 
+ret,binary_thresh=cv2.threshold(img0,128,255,cv2.THRESH_BINARY)
+cv2.namedWindow('binary', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('binary', binary_thresh);
+
+ret,thresh1=cv2.threshold(img0,27,255,cv2.THRESH_BINARY)
+ret,thresh2=cv2.threshold(img0,125,255,cv2.THRESH_BINARY_INV)
+band_thresh = np.bitwise_and(thresh1,thresh2)
+cv2.namedWindow('band', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('band', band_thresh);
+
+ret,thresh3=cv2.threshold(img0,127,255,cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)  
+semi_thresh = np.bitwise_and(img0,thresh3)
+cv2.namedWindow('semi', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('xemi', semi_thresh);
+
+adaptive_thresh=cv2.adaptiveThreshold(img0, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,101,10)
+cv2.namedWindow('adaptive', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('adaptive', adaptive_thresh);
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
